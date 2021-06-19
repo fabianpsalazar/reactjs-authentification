@@ -1,0 +1,1 @@
+With this approach, you’ll render a login page if there is not a stored user token and when the user logs in, they’ll be on the same route that they initially visited. That means if a user visits /dashboard, they will still be on the /dashboard route after login.
