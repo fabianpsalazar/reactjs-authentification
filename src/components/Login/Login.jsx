@@ -3,12 +3,16 @@ import PropTypes from 'prop-types'
 import './Login.css'
 
 async function loginUser(credentials) {
-  return fetch('https://hidden-dusk-35513.herokuapp.com/users/sign_in', {
+  const URL =  'http://localhost:3001/users/sign_in'
+  // const URL =  'https://hidden-dusk-35513.herokuapp.com/users/sign_in'
+  return fetch(URL, {
     method: 'POST',
+    body: JSON.stringify(credentials),
+    
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(credentials)
+    credentials: "same-origin"
   })
   .then(data => data.json())
 }
