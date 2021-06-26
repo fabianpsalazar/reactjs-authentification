@@ -3,9 +3,13 @@ import Login from '../Login/Login'
 import Dashboard from '../Dashboard/Dashboard';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import Preferences from '../Preferences/Preferences';
-
+import { getDefaultNormalizer } from '@testing-library/react';
+import useToken from './useToken';
+ 
 function App () {
-    const [token, setToken] = useState();
+
+    const { token, setToken } = useToken();
+    console.log(useToken())
 
     if(!token) {
         return <Login setToken={setToken}/>
